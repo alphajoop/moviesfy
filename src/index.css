@@ -1,4 +1,8 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
+
+.movie-cover {
+  aspect-ratio: 60/90;
+  object-fit: cover;
+}

@@ -17,6 +17,10 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+      nunito: ['Nunito', 'sans-serif'],
+    },
     extend: {
       keyframes: {
         "accordion-down": {

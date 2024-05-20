@@ -1,8 +1,20 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import WatchList from './components/WatchList';
+import Watched from './components/Watched';
+import { GlobalProvider } from './context/GlobalState';
+
 function App() {
   return (
-    <div className="container">
-      <h1 className="md:text-5xl font-semibold text-4xl text-slate-950">Movie App</h1>
-    </div>
+    <GlobalProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<WatchList />} />
+          <Route path="/watched" element={<Watched />} />
+        </Routes>
+      </Router>
+    </GlobalProvider>
   );
 }
 
