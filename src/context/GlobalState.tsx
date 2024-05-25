@@ -1,3 +1,4 @@
+import { useToast } from '@/components/ui/use-toast';
 import React, { ReactNode, createContext, useEffect, useReducer } from 'react';
 import { Action, Movie, State } from '../types/types';
 import AppReducer from './AppReducer';
@@ -30,6 +31,7 @@ export const GlobalContext = createContext<GlobalContextProps>({
 // Provider component
 export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   const [state, dispatch] = useReducer<React.Reducer<State, Action>>(AppReducer, initialState);
+  const { toast } = useToast();
 
   // Use useEffect to update local storage whenever watchlist or watched changes
   useEffect(() => {
@@ -40,18 +42,22 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
   // Actions
   const addMovieToWatchList = (movie: Movie) => {
     dispatch({ type: 'ADD_MOVIE_TO_WATCHLIST', payload: movie });
+    toast({ description: `${movie.title} added to watchlist.` });
   };
 
   const removeMovieFromWatchList = (id: number) => {
     dispatch({ type: 'REMOVE_MOVIE_FROM_WATCHLIST', payload: id });
+    toast({ description: `Movie removed from watchlist.` });
   };
 
   const addMovieToWatched = (movie: Movie) => {
     dispatch({ type: 'ADD_MOVIE_TO_WATCHED', payload: movie });
+    toast({ description: `${movie.title} added to watched.` });
   };
 
   const removeMovieFromWatched = (id: number) => {
     dispatch({ type: 'REMOVE_MOVIE_FROM_WATCHED', payload: id });
+    toast({ description: `Movie removed from watched.` });
   };
 
   return (
