@@ -66,7 +66,7 @@ export default function Search() {
       <DialogTrigger asChild className="cursor-pointer font-inter">
         <NavigationMenuLink>Search</NavigationMenuLink>
       </DialogTrigger>
-      <DialogContent className="font-inter sm:max-w-[460px] max-sm:w-[335px] max-sm:p-0 rounded-lg mx-auto">
+      <DialogContent className="font-inter sm:max-w-[460px] max-sm:w-[335px] max-sm:p-0 max-sm:pt-4 rounded-lg mx-auto">
         <DialogHeader>
           <DialogTitle className="flex items-center">
             <SearchIcon className="max-sm:ml-3" />
