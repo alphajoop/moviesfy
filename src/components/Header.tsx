@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="container font-inter py-4 flex justify-between max-sm:gap-y-2 max-sm:flex-col md:mb-10">
       <div className="text-2xl font-semibold">
-        <Link to="/">MovieApp</Link>
+        <Link to="/">Moviesfy</Link>
       </div>
       <NavigationMenu>
         <NavigationMenuList className="sm:gap-x-10 gap-x-4 max-sm:w-full">
